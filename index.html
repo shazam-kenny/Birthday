@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Njoki ❤️ | A Timeless Story</title>
+  
+  <link rel="stylesheet" href="style.css?v=storybook">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+  <div class="music-controls">
+    <button id="music-toggle" class="music-btn" onclick="toggleMusic()">🎵</button>
+    <span id="music-status">Play Background Music</span>
+    <audio id="bg-music" loop src="music/music.mp3"></audio>
+  </div>
+
+  <header class="hero">
+    <div class="hero-box" data-aos="zoom-in" data-aos-duration="1200">
+      <span class="date-badge">July 7th • A Celebration of You</span>
+      <h1>Happy Birthday, Njoki</h1>
+      <p>A little corner of the internet dedicated to one of the most important people in my life.<br>Thank you for being one of the greatest blessings I've ever known.</p>
+      <a href="#welcome" class="btn-primary">Begin the Journey ✨</a>
+    </div>
+  </header>
+
+  <section id="welcome" class="section" data-aos="fade-up">
+    <h2>Opening the Book</h2>
+    <p class="section-subtitle">Why this little digital world exists</p>
+    <div class="letter-box">
+      <p>Dear Njoki,</p>
+      <p>I wanted to give you something on your birthday that would last far beyond today. I didn't have the money to buy you an expensive, worldly gift, but I realized I could use my hands and my heart to build you something eternal.</p>
+      <p>Every photo on this page holds a memory that shaped us. Every poem holds a feeling words can barely describe. You matter to me more than you know—you are a quiet, steady home in a loud, rushing world.</p>
+      <p>Welcome to your website. Take your time turning the pages.</p>
+      <div class="signature">— Your Best Friend ❤️</div>
+    </div>
+  </section>
+
+ <!-- SECTION 3: INTERACTIVE GIRLISH PHOTO ALBUM -->
+  <section id="album" class="section" data-aos="fade-up">
+    <h2>Through My Lens 🎀</h2>
+    <p class="section-subtitle">Every picture holds a chapter of our story</p>
+    
+    <div class="album-container">
+      
+      <!-- 1. THE CLOSED ALBUM COVER (Click to Open!) -->
+      <div id="album-cover" class="album-cover" onclick="openAlbumBook()">
+        <h3>Njoki's Memory Vault</h3>
+        <p>A collection of our favorite smiles, laughs, and unforgettable days.</p>
+        <button class="open-album-btn">Tap to Open Album 📖✨</button>
+      </div>
+
+      <!-- 2. THE INSIDE OF THE ALBUM (Hidden until cover is opened) -->
+      <div id="album-content" class="album-content">
+        
+        <!-- Category Tabs -->
+        <div class="gallery-tabs">
+          <button class="tab-btn active" onclick="filterGallery('all')">All Memories (8)</button>
+          <button class="tab-btn" onclick="filterGallery('first')">Our First Days 🌸</button>
+          <button class="tab-btn" onclick="filterGallery('funny')">Funny Moments 😂</button>
+          <button class="tab-btn" onclick="filterGallery('smiles')">Beautiful Smiles 😊</button>
+          <button class="tab-btn" onclick="filterGallery('keep')">Always Keep 💖</button>
+        </div>
+
+        <!-- The Multi-Photo Grid -->
+        <div class="photo-grid" id="photo-grid">
+          
+          <!-- CATEGORY: OUR FIRST DAYS -->
+          <div class="photo-card" data-category="first" onclick="openModal('Our Very First Day 🌸', 'From the moment we started talking, I knew our connection was something rare and special.')">
+            <img src="assets/njoki-1.jpg" alt="First Memory" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+            <p>Where it all began ✨</p>
+          </div>
+          <div class="photo-card" data-category="first" onclick="openModal('Early Adventures 🌸', 'We were still getting to know each other here, but it already felt like we had been best friends for years.')">
+            <img src="assets/njoki-2.jpg" alt="Early Memory" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80'">
+            <p>Strangers to besties 💕</p>
+          </div>
+
+          <!-- CATEGORY: FUNNY MOMENTS -->
+          <div class="photo-card" data-category="funny" onclick="openModal('Unstoppable Laughter 😂', 'I still remember how hard we were laughing this day. My stomach hurt for hours afterward!')">
+            <img src="assets/njoki-3.jpg" alt="Funny Memory 1" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80'">
+            <p>Laughing until we cried 😂</p>
+          </div>
+          <div class="photo-card" data-category="funny" onclick="openModal('Our Random Antics 🤪', 'Nobody else understands our weird inside jokes, and that is exactly what makes our bond so fun.')">
+            <img src="assets/njoki-4.jpg" alt="Funny Memory 2" onerror="this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80'">
+            <p>Pure chaos & fun 👑</p>
+          </div>
+
+          <!-- CATEGORY: BEAUTIFUL SMILES -->
+          <div class="photo-card" data-category="smiles" onclick="openModal('That Glowing Smile 🌅', 'Your smile literally lights up the entire room. Never let the world take this joy away from you.')">
+            <img src="assets/njoki-1.jpg" alt="Smile Memory 1" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80'">
+            <p>Sunshine in human form ☀️</p>
+          </div>
+          <div class="photo-card" data-category="smiles" onclick="openModal('Pure Happiness 😊', 'Seeing you this happy is one of my favorite things in the world. Here is to a million more smiles!')">
+            <img src="assets/njoki-2.jpg" alt="Smile Memory 2" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80'">
+            <p>Effortlessly stunning 💖</p>
+          </div>
+
+          <!-- CATEGORY: PICTURES I'LL ALWAYS KEEP -->
+          <div class="photo-card" data-category="keep" onclick="openModal('A Day to Remember 🤍', 'If I could freeze time and live in one single day forever, it would be this one with you.')">
+            <img src="assets/njoki-3.jpg" alt="Forever Memory 1" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80'">
+            <p>A forever treasure 🤍</p>
+          </div>
+          <div class="photo-card" data-category="keep" onclick="openModal('My Best Friend 🥂', 'Through every season of life, through the highs and the lows, I will always cherish this friendship.')">
+            <img src="assets/njoki-4.jpg" alt="Forever Memory 2" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+            <p>Best friends always 🥂</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="timeline" class="section" data-aos="fade-up">
+    <h2>Our Story So Far</h2>
+    <p class="section-subtitle">How a simple greeting became a lifelong bond</p>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-date">May 2023</div>
+        <div class="timeline-content" onclick="openModal('May 2023', 'The exact day our paths crossed. Neither of us knew how important we would become to each other.')">
+          <h4>We Met ✨</h4>
+          <p>The start of an incredible journey. Click to read more.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-date">Our First Conversations</div>
+        <div class="timeline-content" onclick="openModal('Early Talks', 'We talked for hours without running out of things to say. That was when I knew you were different.')">
+          <h4>Late Night Talks 🗣️</h4>
+          <p>When strangers turned into confidants.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-date">6 Months Apart</div>
+        <div class="timeline-content" onclick="openModal('Distance', 'Even when life pulled us in different directions, our bond never faded for a single second.')">
+          <h4>Testing Time & Distance ✈️</h4>
+          <p>True friendship doesn't care about miles.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-date">July 7th, Today</div>
+        <div class="timeline-content" onclick="openModal('Today', 'Celebrating the woman you have become, and making a promise to be here for all the years to come.')">
+          <h4>Celebrating You 🎂</h4>
+          <p>Here we are today. Stronger, closer, and celebrating you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="poems" class="section" data-aos="fade-up">
+    <h2>The Poetry Bookshelf</h2>
+    <p class="section-subtitle">Words I have written over time about you</p>
+    <div class="grid-3">
+      <div class="poem-card">
+        <h3>A Rare Kind of Friend</h3>
+        <p class="poem-body">In a world that rushes by so fast,
+You are the quiet, steady calm.
+A friendship built not just to last,
+But to serve as a healing balm.</p>
+      </div>
+      <div class="poem-card">
+        <h3>The 4:40 AM Dawn</h3>
+        <p class="poem-body">While the world is still asleep in night,
+You rise with purpose, strong and true.
+A teacher guiding toward the light,
+There is no soul quite like you.</p>
+      </div>
+      <div class="poem-card">
+        <h3>July 7th Grace</h3>
+        <p class="poem-body">Another year of grace and light,
+Another chapter to begin.
+May your stars shine ever bright,
+For the beauty you hold within.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="unique" class="section" data-aos="fade-up">
+    <h2>What Makes You Unique</h2>
+    <p class="section-subtitle">It's not just that you're kind—it's the details</p>
+    <div class="grid-3">
+      <div class="trait-card">
+        <h4>🌅 Waking Up at 4:40 AM</h4>
+        <p>Your dedication is unmatched. The discipline it takes to rise before dawn every day shows the immense drive inside your heart.</p>
+      </div>
+      <div class="trait-card">
+        <h4>📚 Your Love for Teaching</h4>
+        <p>You don't just instruct; you inspire. The patience and care you pour into educating others is truly a gift to the world.</p>
+      </div>
+      <div class="trait-card">
+        <h4>🎓 Finishing University</h4>
+        <p>Your resilience through late nights, exams, and challenges. Watching you graduate and conquer university showed me your true strength.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="appreciation" class="section" data-aos="fade-up">
+    <h2>Things I Appreciate & Memories</h2>
+    <p class="section-subtitle">Little reminders of why our bond is irreplaceable</p>
+    <div class="grid-3">
+      <div class="memory-card" onclick="openModal('Remember When...', 'We laughed so hard in the middle of nowhere that we couldn't even catch our breath? That is my favorite memory.')">
+        <h4>💡 You Fix Bad Days</h4>
+        <p>Even a 5-minute conversation with you can completely turn a terrible day around. Click to read a memory ✨</p>
+      </div>
+      <div class="memory-card" onclick="openModal('Unforgettable Days', 'You turn ordinary Tuesday afternoons into moments I want to remember for the rest of my life.')">
+        <h4>🌟 Pure Authenticity</h4>
+        <p>You are one of the only people in this world I can be 100% myself around without any judgment.</p>
+      </div>
+      <div class="memory-card" onclick="openModal('The Inside Joke', 'Remember that random word we said that nobody else understood? I still smile whenever I think about it.')">
+        <h4>😊 Unmatched Humor</h4>
+        <p>Our random late-night inside jokes that nobody else would ever understand. Click to unlock ✨</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quotes" class="section" data-aos="fade-up">
+    <h2>Words to Live By</h2>
+    <p class="section-subtitle">Verses and thoughts that remind me of your spirit</p>
+    <div class="letter-box" style="text-align: center; border-left: none; border-top: 4px solid var(--accent-rose);">
+      <p>"God is within her, she will not fall; God will help her at break of day."</p>
+      <div class="signature">— Psalm 46:5</div>
+    </div>
+  </section>
+
+  <section id="future" class="section" data-aos="fade-up">
+    <h2>A Letter to Future Njoki</h2>
+    <p class="section-subtitle">Open this 5 years from now</p>
+    <div class="letter-box">
+      <p>Dear Future Njoki,</p>
+      <p>If you are reading this years from now, I hope you are proud of the woman you have become. I hope you still wake up with purpose, I hope your passion for teaching and learning has only grown deeper, and above all, I hope you never forgot how much light you bring into the lives of everyone around you.</p>
+      <p>No matter where life has taken us, I hope you know I am still cheering for you in your corner.</p>
+    </div>
+  </section>
+
+  <section id="countdown" class="section" data-aos="fade-up">
+    <div class="countdown-box">
+      <h2 style="color: #fff; margin-bottom: 0;">The July 7th Countdown</h2>
+      <p style="color: rgba(255,255,255,0.9);">Counting down every second until your special day!</p>
+      <div class="timer-grid" id="timer">
+        <div class="timer-item"><span id="days">00</span>Days</div>
+        <div class="timer-item"><span id="hours">00</span>Hours</div>
+        <div class="timer-item"><span id="minutes">00</span>Minutes</div>
+        <div class="timer-item"><span id="seconds">00</span>Seconds</div>
+      </div>
+      <h3 id="birthday-message" style="display: none; color: #fff; font-size: 2.5rem; margin-top: 2rem;">🎉 Happy Birthday, Njoki! 🎉</h3>
+    </div>
+  </section>
+
+  <section id="guestbook" class="section" data-aos="fade-up">
+    <h2>The Birthday Guestbook</h2>
+    <p class="section-subtitle">Leave a message or a birthday wish right here on your page</p>
+    <form class="guestbook-form" onsubmit="addGuestbookEntry(event)">
+      <input type="text" id="guest-name" placeholder="Your Name" required>
+      <textarea id="guest-msg" rows="4" placeholder="Write your special birthday message to Njoki here..." required></textarea>
+      <button type="submit" class="btn-primary">Post Message 💌</button>
+    </form>
+    <div class="guestbook-entries" id="entries-container">
+      </div>
+  </section>
+
+  <section id="open-when" class="section" data-aos="fade-up">
+    <h2>Open When...</h2>
+    <p class="section-subtitle">A secret vault of letters for whenever you need them</p>
+    <div class="grid-3">
+      <div class="open-card" onclick="openModal('Open When You Have a Hard Day 🌧️', 'Take a deep breath. You have survived 100% of your hardest days so far. You are so much stronger than whatever is stressing you out right now. I believe in you!')">
+        <h4>🌧️ Having a Hard Day</h4>
+        <p>Click to read when things feel heavy</p>
+      </div>
+      <div class="open-card" onclick="openModal('Open When You Need a Smile 😊', 'Remember that you wake up at 4:40 AM and conquer the world every single day while most people are dreaming. You are a real-life superhero!')">
+        <h4>😊 Need to Smile</h4>
+        <p>Click here for an instant mood boost</p>
+      </div>
+      <div class="open-card" onclick="openModal('Open When You Doubt Yourself 💭', 'Never forget how much hard work you poured into finishing university and chasing your goals. You are capable of extraordinary things!')">
+        <h4>💭 Doubting Yourself</h4>
+        <p>Click to remember who you truly are</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section" style="text-align: center; padding-bottom: 8rem;" data-aos="zoom-in">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h3 style="font-family: var(--font-poem); font-size: 2.2rem; font-style: italic; color: var(--accent-gold); margin-bottom: 1.5rem;">
+        "Some people walk into our lives and quietly become home.<br>Thank you for being one of mine."
+      </h3>
+      <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-main);">Happy Birthday, Njoki ❤️</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2rem;">Created with love for July 7th</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 1rem; font-family: var(--font-poem);"></h3>
+      <p id="modal-text" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main);"></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js?v=storybook"></script>
+</body>
+</html>
